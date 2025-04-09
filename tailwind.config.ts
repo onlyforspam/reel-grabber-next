@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				instagram: {
+					purple: '#8a3ab9',
+					blue: '#4c68d7',
+					pink: '#cd486b',
+					yellow: '#fbad50',
+					orange: '#f77737'
 				}
+			},
+			backgroundImage: {
+				'gradient-instagram': 'linear-gradient(45deg, #8a3ab9, #4c68d7, #cd486b)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +95,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' },
+				},
+				'bounce-subtle': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'bounce-subtle': 'bounce-subtle 2s infinite',
 			}
 		}
 	},
