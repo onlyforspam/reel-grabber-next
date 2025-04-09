@@ -14,8 +14,9 @@ const UrlInput: React.FC<UrlInputProps> = ({ onSubmit, isLoading }) => {
   const [error, setError] = useState<string | null>(null);
 
   const validateUrl = (input: string): boolean => {
-    // Basic validation for Instagram URLs
-    const regex = /^https?:\/\/(?:www\.)?instagram\.com\/(?:reel|p)\/([a-zA-Z0-9_-]+)/i;
+    // More permissive regex for Instagram URLs
+    // Accepts various Instagram URL formats including www and non-www versions
+    const regex = /instagram\.com\/(p|reel|reels|tv)\/([^/?]+)/i;
     return regex.test(input);
   };
 
@@ -90,7 +91,7 @@ const UrlInput: React.FC<UrlInputProps> = ({ onSubmit, isLoading }) => {
         <p className="mt-2 text-red-400 text-sm">{error}</p>
       )}
       <p className="mt-3 text-xs text-gray-400 text-center">
-        Example: https://www.instagram.com/reel/C1v2C3d4E5f/
+        Examples: https://www.instagram.com/reel/C1v2C3d4E5f/ or https://instagram.com/p/AbCdEfGh123/
       </p>
     </form>
   );
